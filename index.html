@@ -536,7 +536,11 @@
                 <div class="checkbox-button-container">
                     <div class="column">
                         <div>
-                            <input type="checkbox" id="20240102-20240117" value="20240102-20240117" checked />
+                            <input type="checkbox" id="20240405-20240426" value="20240405-20240426" checked />
+                            <label for="20240405-20240426">空中写真(2024年04月05日～04月26日撮影)</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="20240102-20240117" value="20240102-20240117" />
                             <label for="20240102-20240117">空中写真(2024年01月02日～01月17日撮影)</label>
                         </div>
                         <div>
@@ -1144,6 +1148,13 @@
                 },
             });
 
+            // 令和6年能登半島地震 能登地区　正射画像（2024年4月5日～4月26日撮影）ソース
+            afterMap.addSource('20240102noto_0405_0426', {
+                type: 'raster',
+                tiles: ['https://cyberjapandata.gsi.go.jp/xyz/20240102noto_0405_0426do/{z}/{x}/{y}.png'],
+                attribution: '<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank">地理院タイル</a>',
+            });
+
             // ============================== 正射画像（全期間合成）==============================
 
             // 令和6年能登半島地震 珠洲地区　正射画像（2024年1月2日撮影）レイヤ
@@ -1155,7 +1166,7 @@
                     'raster-opacity': opacity_value,
                 },
                 layout: {
-                    visibility: 'visible',
+                    visibility: 'none',
                 },
             });
 
@@ -1183,7 +1194,7 @@
                     'raster-opacity': opacity_value,
                 },
                 layout: {
-                    visibility: 'visible',
+                    visibility: 'none',
                 },
             });
 
@@ -1196,7 +1207,7 @@
                     'raster-opacity': opacity_value,
                 },
                 layout: {
-                    visibility: 'visible',
+                    visibility: 'none',
                 },
             });
 
@@ -1209,7 +1220,7 @@
                     'raster-opacity': opacity_value,
                 },
                 layout: {
-                    visibility: 'visible',
+                    visibility: 'none',
                 },
             });
 
@@ -1222,7 +1233,7 @@
                     'raster-opacity': opacity_value,
                 },
                 layout: {
-                    visibility: 'visible',
+                    visibility: 'none',
                 },
             });
 
@@ -1235,7 +1246,7 @@
                     'raster-opacity': opacity_value,
                 },
                 layout: {
-                    visibility: 'visible',
+                    visibility: 'none',
                 },
             });
 
@@ -1248,7 +1259,7 @@
                     'raster-opacity': opacity_value,
                 },
                 layout: {
-                    visibility: 'visible',
+                    visibility: 'none',
                 },
             });
 
@@ -1261,7 +1272,7 @@
                     'raster-opacity': opacity_value,
                 },
                 layout: {
-                    visibility: 'visible',
+                    visibility: 'none',
                 },
             });
 
@@ -1270,6 +1281,19 @@
                 id: 'nanao-0117-g',
                 type: 'raster',
                 source: 'nanao-0117',
+                paint: {
+                    'raster-opacity': opacity_value,
+                },
+                layout: {
+                    visibility: 'none',
+                },
+            });
+
+            // 令和6年能登半島地震 能登地区　正射画像（2024年4月5日～4月26日撮影）レイヤ
+            afterMap.addLayer({
+                id: '20240102noto_0405_0426',
+                type: 'raster',
+                source: '20240102noto_0405_0426',
                 paint: {
                     'raster-opacity': opacity_value,
                 },
@@ -2366,6 +2390,17 @@
         });
 
         // 国土地理院 発災後の空中写真の表示・非表示切り替え制御
+
+        // 2024年04月05日～04月26日撮影
+        document.getElementById('20240405-20240426').addEventListener('change', function (e) {
+            if (e.target.checked) {
+                // チェックボックスがON - レイヤーを表示
+                afterMap.setLayoutProperty('20240102noto_0405_0426', 'visibility', 'visible');
+            } else {
+                // チェックボックスがOFF - レイヤーを非表示
+                afterMap.setLayoutProperty('20240102noto_0405_0426', 'visibility', 'none');
+            }
+        });
 
         // 全期間合成（2024年01月02日撮影～2024年01月17日撮影）
         document.getElementById('20240102-20240117').addEventListener('change', function (e) {
