@@ -16,7 +16,7 @@
     "cs": {
       "type": "raster",
       "tiles": [
-        "https://rinya.geospatial.jp/tile/csmaptile_noto/{z}/{x}/{y}.png"
+        "https://shiworks.xsrv.jp/proxy.php?url=https://rinya.geospatial.jp/tile/csmaptile_noto/{z}/{x}/{y}.png"
       ],
       "attribution": "<a href='https://www.geospatial.jp/ckan/dataset/2024noto_rinya' target='_blank'>林野庁 CS立体図(能登(石川県))※発災後</a>"
     }
