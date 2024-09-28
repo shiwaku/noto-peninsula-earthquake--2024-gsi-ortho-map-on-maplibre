@@ -1,9 +1,2 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>404 Not Found</title>
-</head><body>
-<h1>Not Found</h1>
-<p>The requested URL /road/r6noto/map/json/before_after.geojson was not found on this server.</p>
-<p>Additionally, a 404 Not Found
-error was encountered while trying to use an ErrorDocument to handle the request.</p>
-<script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1503995687" async></script></body></html>
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>AccessDenied</Code><Message>Access Denied</Message><RequestId>64ZVYSC91MY3CMGW</RequestId><HostId>hd9JFe/ogUbZT6jWiDFtGKJOerCXIp7LWghmSDeqJx+WUDdioTEnWpyrooHLi76liBQ6XFpmX/MzocmSiJk7NYuIkVYgwPps</HostId></Error>
