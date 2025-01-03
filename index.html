@@ -515,12 +515,16 @@
                 <div class="checkbox-button-container">
                     <div class="column">
                         <div>
-                            <input type="checkbox" id="2020_2022" value="2020_2022" checked />
+                            <input type="checkbox" id="2020_2022" value="2020_2022" />
                             <label for="2020_2022">空中写真(2020年・2022年)</label>
                         </div>
                         <div>
                             <input type="checkbox" id="201004_05" value="201004_05" />
                             <label for="201004_05">空中写真(2010年4月～5月頃)</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="cs-noto-b" value="cs-noto-b" checked />
+                            <label for="cs-noto-b">CS立体図(0.5m、2020-2023年)</label>
                         </div>
                     </div>
                 </div>
@@ -536,7 +540,7 @@
                 <div class="checkbox-button-container">
                     <div class="column">
                         <div>
-                            <input type="checkbox" id="20240405-20240426" value="20240405-20240426" checked />
+                            <input type="checkbox" id="20240405-20240426" value="20240405-20240426" />
                             <label for="20240405-20240426">空中写真(2024年04月05日～04月26日撮影)</label>
                         </div>
                         <div>
@@ -562,6 +566,14 @@
                         <div>
                             <input type="checkbox" id="20240117" value="20240117" />
                             <label for="20240117">空中写真(2024年01月17日撮影)</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="cs-noto-a" value="cs-noto-a" />
+                            <label for="cs-noto-a">CS立体図(0.5m、2024年7月公開速報成果)</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="cs-noto-af" value="cs-noto-af" checked />
+                            <label for="cs-noto-af">CS立体図(0.5m、2024年12月公開最終成果)</label>
                         </div>
                         <div>
                             <input type="checkbox" id="hokai" value="hokai" checked />
@@ -1298,7 +1310,7 @@
                     'raster-opacity': opacity_value,
                 },
                 layout: {
-                    visibility: 'visible',
+                    visibility: 'none',
                 },
             });
 
@@ -2461,6 +2473,17 @@
             }
         });
 
+        // CS立体図(0.5m、2020-2023年)
+        document.getElementById('cs-noto-b').addEventListener('change', function (e) {
+            if (e.target.checked) {
+                // チェックボックスがON - レイヤーを表示
+                beforeMap.setLayoutProperty('cs-noto-b', 'visibility', 'visible');
+            } else {
+                // チェックボックスがOFF - レイヤーを非表示
+                beforeMap.setLayoutProperty('cs-noto-b', 'visibility', 'none');
+            }
+        });
+
         // 国土地理院 発災後の空中写真の表示・非表示切り替え制御
 
         // 2024年04月05日～04月26日撮影
@@ -2575,6 +2598,28 @@
                 afterMap.setLayoutProperty('wazimanishi-0117', 'visibility', 'none');
                 afterMap.setLayoutProperty('anamizu-0117', 'visibility', 'none');
                 afterMap.setLayoutProperty('nanao-0117', 'visibility', 'none');
+            }
+        });
+
+        // CS立体図(0.5m、2024年7月公開速報成果)
+        document.getElementById('cs-noto-a').addEventListener('change', function (e) {
+            if (e.target.checked) {
+                // チェックボックスがON - レイヤーを表示
+                afterMap.setLayoutProperty('cs-noto-a', 'visibility', 'visible');
+            } else {
+                // チェックボックスがOFF - レイヤーを非表示
+                afterMap.setLayoutProperty('cs-noto-a', 'visibility', 'none');
+            }
+        });
+
+        // CS立体図(0.5m、2024年12月公開最終成果)
+        document.getElementById('cs-noto-af').addEventListener('change', function (e) {
+            if (e.target.checked) {
+                // チェックボックスがON - レイヤーを表示
+                afterMap.setLayoutProperty('cs-noto-af', 'visibility', 'visible');
+            } else {
+                // チェックボックスがOFF - レイヤーを非表示
+                afterMap.setLayoutProperty('cs-noto-af', 'visibility', 'none');
             }
         });
 

@@ -61,14 +61,6 @@
       }
     },
     {
-      "id": "cs-noto",
-      "type": "raster",
-      "source": "cs",
-      "paint": {
-        "raster-opacity": 1
-      }
-    },
-    {
       "id": "水域",
       "maxzoom": 17,
       "type": "fill",
@@ -14020,6 +14012,14 @@
         ],
         "text-halo-color": "rgba(255,255,255,1)",
         "text-halo-width": 1
+      }
+    },
+    {
+      "id": "cs-noto-b",
+      "type": "raster",
+      "source": "cs",
+      "paint": {
+        "raster-opacity": 1
       }
     },
     {
