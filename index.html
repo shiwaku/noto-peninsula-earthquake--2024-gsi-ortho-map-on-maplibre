@@ -509,7 +509,7 @@
     <div id="info-before">
         <details>
             <summary class="yubi-before">
-                <strong>空中写真(発災前)</strong>
+                <strong>空中写真(発災前)等</strong>
             </summary>
             <fieldset>
                 <div class="checkbox-button-container">
@@ -624,7 +624,7 @@
     </div>
     <div class="map-overlay top">
         <div class="map-overlay-inner">
-            <label>空中写真 不透明度: <span id="photo-slider-opacity-value">100%</span></label>
+            <label>空中写真・CS立体図<br>不透明度: <span id="photo-slider-opacity-value">100%</span></label>
             <input id="photo-slider-opacity" type="range" min="0" max="100" step="1" value="100" />
         </div>
     </div>
@@ -2405,17 +2405,24 @@
                 });
             });
 
-        // ============================== スライダーで空中写真の不透明度を制御 ==============================
+        // ============================== スライダーで空中写真・CS立体図の不透明度を制御 ==============================
 
         const photosliderOpactiy = document.getElementById('photo-slider-opacity');
         const photosliderOpactiyValue = document.getElementById('photo-slider-opacity-value');
 
         photosliderOpactiy.addEventListener('input', (e) => {
+            // 発災前
+            // 空中写真(2020年・2022年)
             beforeMap.setPaintProperty('ishikawa-ortho', 'raster-opacity', parseInt(e.target.value, 10) / 100);
+            // 空中写真(2010年4月～5月頃)
             beforeMap.setPaintProperty('seamlessphoto', 'raster-opacity', parseInt(e.target.value, 10) / 100);
+            // CS立体図(0.5m、2020-2023年)
+            beforeMap.setPaintProperty('cs-noto-b', 'raster-opacity', parseInt(e.target.value, 10) / 100);
 
+            // 発災後
             // 全期間合成（2024年04月05日撮影～2024年04月26日撮影）
             afterMap.setPaintProperty('20240102noto_0405_0426', 'raster-opacity', parseInt(e.target.value, 10) / 100);
+
             // 全期間合成（2024年01月02日撮影～2024年01月17日撮影）
             afterMap.setPaintProperty('suzu-0102-g', 'raster-opacity', parseInt(e.target.value, 10) / 100);
             // afterMap.setPaintProperty('suzu-0105-g', 'raster-opacity', parseInt(e.target.value, 10) / 100);
@@ -2427,6 +2434,7 @@
             afterMap.setPaintProperty('anamizu-0117-g', 'raster-opacity', parseInt(e.target.value, 10) / 100);
             afterMap.setPaintProperty('nanao-0105-g', 'raster-opacity', parseInt(e.target.value, 10) / 100);
             afterMap.setPaintProperty('nanao-0117-g', 'raster-opacity', parseInt(e.target.value, 10) / 100);
+
             // 撮影日別
             afterMap.setPaintProperty('wazimahigashi-0102', 'raster-opacity', parseInt(e.target.value, 10) / 100);
             afterMap.setPaintProperty('wazimanaka-0102', 'raster-opacity', parseInt(e.target.value, 10) / 100);
@@ -2444,6 +2452,11 @@
             afterMap.setPaintProperty('wazimanishi-0117', 'raster-opacity', parseInt(e.target.value, 10) / 100);
             afterMap.setPaintProperty('anamizu-0117', 'raster-opacity', parseInt(e.target.value, 10) / 100);
             afterMap.setPaintProperty('nanao-0117', 'raster-opacity', parseInt(e.target.value, 10) / 100);
+            
+            // CS立体図
+            afterMap.setPaintProperty('cs-noto-a', 'raster-opacity', parseInt(e.target.value, 10) / 100);
+            afterMap.setPaintProperty('cs-noto-af', 'raster-opacity', parseInt(e.target.value, 10) / 100);
+
             photosliderOpactiyValue.textContent = e.target.value + '%';
         });
 
