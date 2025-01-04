@@ -30,7 +30,7 @@
     "i": {
       "type": "raster",
       "tiles": [
-        "https://mapdata.qchizu2.xyz/17p/ishikawa_f_01/{z}/{x}/{y}.png"
+        "https://mapdata.qchizu2.xyz/02_ortho/17_ishikawa/pref_shinrin_2022/01/{z}/{x}/{y}.webp"
       ],
       "attribution": "<a href='https://info.qchizu.xyz/' target='_blank'>Q地図タイル(2020、2022年 石川県能登(簡易オルソ))(全国Q地図)</a>"
     }
@@ -14038,7 +14038,7 @@
       "type": "raster",
       "source": "i",
       "layout": {
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "raster-opacity": 1
