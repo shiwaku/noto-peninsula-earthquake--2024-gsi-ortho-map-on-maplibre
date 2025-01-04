@@ -1,6 +1,6 @@
-# 令和 6 年能登半島地震 被災前後比較マップ
+# 令和6年能登半島地震 被災前後比較マップ
 
-令和 6 年能登半島地震に関連して被災状況の把握を目的に公開されたデータを MapLibre GL JS で表示するデモサイトです。
+令和6年能登半島地震に関連して被災状況の把握を目的に公開されたデータを MapLibre GL JS で表示するデモサイトです。
 
 ## Public Website
 
@@ -145,6 +145,12 @@ https://github.com/shi-works/noto-hanto-earthquake-2024-gsi-ortho-map-on-maplibr
 - 産業技術総合研究所 シームレス標高タイル（統合 DEM）
   - 出典：https://tiles.gsj.jp/tiles/elev/tiles.html
   - ライセンス：「[産総研地質調査総合センターウェブサイト利用規約](https://www.gsj.jp/license/license.html)」に従い、商用を含む自由な二次利用が可能です。この規約は CC BY 4.0 と互換です。
-- 森林総合研究所 CS 立体図(能登(石川県))
+- 森林総合研究所 CS 立体図(能登(石川県))※発災前、2020～2023年
   - 出典：https://www2.ffpri.go.jp/soilmap/data-src.html
   - ライセンス：[森林土壌デジタルマップ・利用規約](https://www2.ffpri.go.jp/soilmap/#)参照。
+- 林野庁 能登地域 微地形表現図（令和６年能登半島地震の発災後）※2024年7月公開速報成果
+  - 出典：https://www.geospatial.jp/ckan/dataset/2024noto_rinya
+  - ライセンス：このデータは、出典明示を行うことを条件に、無償で商用利用することもできます。クリエイティブ・コモンズ・ライセンス表示4.0と互換性があります。ただし、本データは、航空レーザ計測データを簡易処理した速報成果を利用しているため、位置精度を保証することができません。そのため、公共測量の用に供することはできませんので、あらかじめご了承の上ご利用いただきますようお願いします。
+- 能登地域 CS立体図(0.5m)※発災後、2024年12月公開最終成果
+  - 出典：https://github.com/shiwaku/aist-dem-with-cs-map-on-maplibre
+  - ライセンス：CC BY 4.0
